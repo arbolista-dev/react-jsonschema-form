@@ -1,20 +1,16 @@
 {
-  "presets": ["react", "es2015"],
+  "presets": ["react-native"],
   "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "src": "./src"
+      },
+      "extensions": [".js", ".jsx"]
+    }],
     "transform-object-rest-spread",
-    "transform-class-properties"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        ["react-transform", {
-          "transforms": [{
-            "transform": "react-transform-hmr",
-            "imports": ["react"],
-            "locals": ["module"]
-          }]
-        }]
-      ]
-    }
-  }
+    "flow-react-proptypes",
+    "transform-flow-strip-types"
+  ]
 }
+
